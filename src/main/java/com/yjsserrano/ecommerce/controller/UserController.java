@@ -5,6 +5,8 @@ import com.yjsserrano.ecommerce.domain.User;
 import com.yjsserrano.ecommerce.dto.UserDTO;
 import com.yjsserrano.ecommerce.repository.CartRepository;
 import com.yjsserrano.ecommerce.repository.UserRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -25,11 +27,17 @@ import static java.util.Objects.isNull;
  * @see <a href="https://www.baeldung.com/spring-new-requestmapping-shortcuts">@RequestMapping</a>
  * @see <a href="https://howtodoinjava.com/spring5/webmvc/controller-getmapping-postmapping/">@PostMapping & GetMapping I</a>
  * @see <a href="http://zetcode.com/spring/postmapping/">@PostMapping & GetMapping II</a>
+ * @see <a href="https://lankydan.dev/2019/01/09/configuring-logback-with-spring-boot">Logback I</a>
+ * @see <a href="https://www.javaguides.net/2018/09/spring-boot-2-logging-slf4j-logback-and-log4j-example.html">Logback II</a>
+ * @see <a href="https://dzone.com/articles/configuring-logback-with-spring-boot">Logback III</a>
+ * @see <a href="https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-features.html#boot-features-logging">Logback IV</a>
+ * @see <a href="https://examples.javacodegeeks.com/enterprise-java/logback/logback-configuration-example/">Logback V</a>
  * @since 1.0
  */
 @RestController
 @RequestMapping("/api/user")
 public class UserController {
+    private static final Logger log = LoggerFactory.getLogger(UserController.class);
 
     @Autowired
     private UserRepository userRepository;
@@ -75,6 +83,8 @@ public class UserController {
      */
     @GetMapping("/id/{id}")
     public ResponseEntity<User> findUserById(@PathVariable Long id) {
+        log.info("Method: findUserById | Status: Success | Message: The user of id {} " +
+                "was retrieved successfully", id);
         return ResponseEntity.of(userRepository.findById(id));
     }
 
@@ -86,6 +96,7 @@ public class UserController {
      */
     @GetMapping("/{username}")
     public ResponseEntity<User> findUserByUsername(@PathVariable String username) {
+        log.info("Method: findUserByUsername | Status: Analyzing | Message: The user {} it's being retrieved", username);
         User user = userRepository.findUserByUsername(username);
         return isNull(user) ? ResponseEntity.notFound().build() : ResponseEntity.ok(user);
     }
@@ -99,6 +110,7 @@ public class UserController {
     @PostMapping("/create")
     public ResponseEntity<User> createUser(@Valid @RequestBody UserDTO userDTO) {
         if (!checkUserDTO(userDTO)) {
+            log.error("Method: createUser | Status: Error | Message: The user {} can not be created", userDTO.getUsername());
             return ResponseEntity.badRequest().build();
         }
 
@@ -111,6 +123,8 @@ public class UserController {
         user.setCart(cart);
 
         userRepository.save(user);
+        log.info("Method: createUser | Status: Success | Message: The user {} was created successfully", userDTO.getUsername());
+
         return ResponseEntity.ok(user);
     }
 }
