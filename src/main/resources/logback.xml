@@ -5,7 +5,7 @@
 <!-- LOGBACK IV : https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-features.html#boot-features-logging -->
 <!-- LOGBACK V : https://examples.javacodegeeks.com/enterprise-java/logback/logback-configuration-example/ -->
 <configuration>
-    <property name="LOG_LOCATION" value="/home/yuri/spring-logs"/>
+    <property name="LOG_LOCATION" value="/home/yuri"/>
 
     <appender name="CONSOLE"
               class="ch.qos.logback.core.ConsoleAppender">
