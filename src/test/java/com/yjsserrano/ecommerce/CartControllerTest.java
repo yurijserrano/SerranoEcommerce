@@ -116,7 +116,7 @@ public class CartControllerTest {
     public void testAddToCartUsernameFailure() {
         when(userRepository.findUserByUsername("Beatriz")).thenReturn(null);
 
-        CartDTO cartDTO = getCartDTO("Beatriz");
+        CartDTO cartDTO = getCartDTO();
 
         final ResponseEntity<Cart> cartResponseEntity = cartController.addToCart(cartDTO);
         assertThat(cartResponseEntity, notNullValue());
@@ -192,7 +192,7 @@ public class CartControllerTest {
     public void testRemoveFromCartUsernameFailure() {
         when(userRepository.findUserByUsername("Beatriz")).thenReturn(null);
 
-        CartDTO cartDTO = getCartDTO("Beatriz");
+        CartDTO cartDTO = getCartDTO();
 
         final ResponseEntity<Cart> cartResponseEntity = cartController.removeFromCart(cartDTO);
         assertThat(cartResponseEntity, notNullValue());
@@ -241,8 +241,8 @@ public class CartControllerTest {
      *
      * @return {@link CartDTO}
      */
-    private CartDTO getCartDTO(String itemOwner) {
-        return CartDTO.builder().username(itemOwner).build();
+    private CartDTO getCartDTO() {
+        return CartDTO.builder().username("Beatriz").build();
     }
 
     /**
