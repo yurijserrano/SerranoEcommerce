@@ -18,7 +18,7 @@
 
     <appender name="FILE"
               class="ch.qos.logback.core.FileAppender">
-        <file>{LOG_LOCATION}/serrano_ecommerce.log</file>
+        <file>${LOG_LOCATION}/serrano_ecommerce.log</file>
         <encoder>
             <pattern>%d{dd-MM-yyyy HH:mm:ss.SSS} %level [%thread] %logger{10}.%M [%file:%line] %msg%n</pattern>
         </encoder>
