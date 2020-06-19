@@ -60,7 +60,7 @@ public class ItemController {
      */
     @GetMapping("/{id}")
     public ResponseEntity<Item> getItemById(@PathVariable Long id) {
-        log.info("Method: getItemById | Status: Success | Message: The item {} was retrieved successfully", id);
+        log.info("Method: getItemById | Status: Analyzing | Message: The item {} it's being retrieved", id);
         return ResponseEntity.of(itemRepository.findById(id));
     }
 
