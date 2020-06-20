@@ -1,0 +1,2 @@
+insert into item (name, price, description) values ('Iphone X', 500.00, 'The best Iphone of the market');
+insert into item (name, price, description) values ('ASUS ROG Phone II', 450.00, 'The best Android smartphone');
