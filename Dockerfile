@@ -5,4 +5,4 @@ USER serrano:serrano
 VOLUME /tmp
 ARG JAR_FILE=target/serrano-ecommerce.jar
 COPY ${JAR_FILE} serrano-ecommerce.jar
-ENTRYPOINT ["sh", "-c", "java ${JAVA_OPTS} -jar /app.jar ${0} ${@}"]
+ENTRYPOINT ["sh", "-c", "java ${JAVA_OPTS} -jar /serrano-ecommerce.jar ${0} ${@}"]
