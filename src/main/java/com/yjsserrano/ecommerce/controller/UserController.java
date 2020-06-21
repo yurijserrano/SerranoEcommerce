@@ -37,7 +37,7 @@ import static java.util.Objects.isNull;
 @RestController
 @RequestMapping("/api/user")
 public class UserController {
-    private static final Logger log = LoggerFactory.getLogger(UserController.class);
+    private static final Logger log = LoggerFactory.getLogger("splunk.logger");
 
     @Autowired
     private UserRepository userRepository;

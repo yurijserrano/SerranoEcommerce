@@ -23,6 +23,19 @@
             <pattern>%d{dd-MM-yyyy HH:mm:ss.SSS} %level [%thread] %logger{10}.%M [%file:%line] %msg%n</pattern>
         </encoder>
     </appender>
+
+    <appender name="SOCKET" class="com.splunk.logging.TcpAppender">
+        <RemoteHost>52.206.58.146</RemoteHost>
+        <Port>8084</Port>
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <pattern>%d{dd-MM-yyyy HH:mm:ss.SSS} %level [%thread] %logger{10}.%M [%file:%line] %msg%n</pattern>
+        </layout>
+    </appender>
+
+    <logger name="splunk.logger" additivity="false" level="INFO">
+        <appender-ref ref="SOCKET"/>
+    </logger>
+
     <root level="INFO">
         <appender-ref ref="CONSOLE"/>
         <appender-ref ref="FILE"/>

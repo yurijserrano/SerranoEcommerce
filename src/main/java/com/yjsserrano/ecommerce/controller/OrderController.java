@@ -35,7 +35,7 @@ import static java.util.Objects.isNull;
 @RestController
 @RequestMapping("/api/order")
 public class OrderController {
-    private static final Logger log = LoggerFactory.getLogger(OrderController.class);
+    private static final Logger log = LoggerFactory.getLogger("splunk.logger");
 
     @Autowired
     private UserRepository userRepository;

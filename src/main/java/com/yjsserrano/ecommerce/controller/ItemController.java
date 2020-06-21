@@ -37,7 +37,7 @@ import static java.util.Objects.isNull;
 @RestController
 @RequestMapping("/api/item")
 public class ItemController {
-    private static final Logger log = LoggerFactory.getLogger(ItemController.class);
+    private static final Logger log = LoggerFactory.getLogger("splunk.logger");
 
     @Autowired
     private ItemRepository itemRepository;

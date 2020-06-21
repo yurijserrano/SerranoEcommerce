@@ -46,7 +46,7 @@ import static java.util.Objects.isNull;
 @RequestMapping("/api/cart")
 public class CartController {
 
-    private static final Logger log = LoggerFactory.getLogger(CartController.class);
+    private static final Logger log = LoggerFactory.getLogger("splunk.logger");
 
     @Autowired
     private UserRepository userRepository;
