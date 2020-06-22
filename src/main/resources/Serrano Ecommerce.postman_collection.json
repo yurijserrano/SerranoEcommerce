@@ -1,0 +1,385 @@
+{
+	"info": {
+		"_postman_id": "87c48e38-6380-4cfa-94fa-425de9ded24e",
+		"name": "Serrano Ecommerce",
+		"description": "Brings several tests to verify the API of the Serrano Ecommerce",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\":\"Yuri\",\n\t\"password\":\"Serrano\",\n\t\"confirmPassword\":\"Serrano\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/user/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"user",
+						"create"
+					]
+				},
+				"description": "Create an user in the Serrano Ecommerce"
+			},
+			"response": []
+		},
+		{
+			"name": "LoginUser",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\":\"Yuri\",\n\t\"password\":\"Serrano\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"login"
+					]
+				},
+				"description": "Login in the Serrano Ecommerce with the user created"
+			},
+			"response": []
+		},
+		{
+			"name": "GetUserById",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJZdXJpIiwiZXhwIjoxNTkzNjU5NzI1fQ.IibIXLQnEoXFEYXGh5yjLwZaDKdT3S8TCglE4piKs31BiONd_ZWSApEifHhJe02a9izTt0cSea75EJ-tAKH8AA",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/user/id/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"user",
+						"id",
+						"1"
+					]
+				},
+				"description": "Get an user of the Serrano Ecommerce by your id"
+			},
+			"response": []
+		},
+		{
+			"name": "GetUserByUsername",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJZdXJpIiwiZXhwIjoxNTkzNjU5NzI1fQ.IibIXLQnEoXFEYXGh5yjLwZaDKdT3S8TCglE4piKs31BiONd_ZWSApEifHhJe02a9izTt0cSea75EJ-tAKH8AA",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/user/Yuri",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"user",
+						"Yuri"
+					]
+				},
+				"description": "Get an user of the Serrano Ecommercer using your username"
+			},
+			"response": []
+		},
+		{
+			"name": "GetListOfItems",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJZdXJpIiwiZXhwIjoxNTkzNjU5NzI1fQ.IibIXLQnEoXFEYXGh5yjLwZaDKdT3S8TCglE4piKs31BiONd_ZWSApEifHhJe02a9izTt0cSea75EJ-tAKH8AA",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/item",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"item"
+					]
+				},
+				"description": "Get all items of Serrano Ecommerce"
+			},
+			"response": []
+		},
+		{
+			"name": "GetItemById",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJZdXJpIiwiZXhwIjoxNTkzNjU5NzI1fQ.IibIXLQnEoXFEYXGh5yjLwZaDKdT3S8TCglE4piKs31BiONd_ZWSApEifHhJe02a9izTt0cSea75EJ-tAKH8AA"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/item/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"item",
+						"1"
+					]
+				},
+				"description": "Get an item of Serrano Ecommerce using your id"
+			},
+			"response": []
+		},
+		{
+			"name": "GetItemByName",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJZdXJpIiwiZXhwIjoxNTkzNjU5NzI1fQ.IibIXLQnEoXFEYXGh5yjLwZaDKdT3S8TCglE4piKs31BiONd_ZWSApEifHhJe02a9izTt0cSea75EJ-tAKH8AA",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/item/name/Iphone X",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"item",
+						"name",
+						"Iphone X"
+					]
+				},
+				"description": "Get an item of Serrano Ecommerce using your name"
+			},
+			"response": []
+		},
+		{
+			"name": "AddToCart",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJZdXJpIiwiZXhwIjoxNTkzNjU5NzI1fQ.IibIXLQnEoXFEYXGh5yjLwZaDKdT3S8TCglE4piKs31BiONd_ZWSApEifHhJe02a9izTt0cSea75EJ-tAKH8AA"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\":\"Yuri\",\n\t\"itemId\":1,\n\t\"quantity\":4\n}",
+					"options": {
+						"raw": {}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/cart/addToCart",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"cart",
+						"addToCart"
+					]
+				},
+				"description": "Add a specific item in the cart of an user with a specific quantity"
+			},
+			"response": []
+		},
+		{
+			"name": "RemoveFromCart",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJZdXJpIiwiZXhwIjoxNTkzNjU5NzI1fQ.IibIXLQnEoXFEYXGh5yjLwZaDKdT3S8TCglE4piKs31BiONd_ZWSApEifHhJe02a9izTt0cSea75EJ-tAKH8AA"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\":\"Yuri\",\n\t\"itemId\":1,\n\t\"quantity\":30\n}",
+					"options": {
+						"raw": {}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/cart/removeFromCart",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"cart",
+						"removeFromCart"
+					]
+				},
+				"description": "Remove Items from a cart of an user"
+			},
+			"response": []
+		},
+		{
+			"name": "SubmitUserOrder",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJZdXJpIiwiZXhwIjoxNTkzNjU5NzI1fQ.IibIXLQnEoXFEYXGh5yjLwZaDKdT3S8TCglE4piKs31BiONd_ZWSApEifHhJe02a9izTt0cSea75EJ-tAKH8AA"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/order/submit/Yuri",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"order",
+						"submit",
+						"Yuri"
+					]
+				},
+				"description": "Submit the order of an user"
+			},
+			"response": []
+		},
+		{
+			"name": "GetOrdersHistory",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJZdXJpIiwiZXhwIjoxNTkzNjU5NzI1fQ.IibIXLQnEoXFEYXGh5yjLwZaDKdT3S8TCglE4piKs31BiONd_ZWSApEifHhJe02a9izTt0cSea75EJ-tAKH8AA"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/order/history/Yuri",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"order",
+						"history",
+						"Yuri"
+					]
+				},
+				"description": "Get the order's history of an user"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
